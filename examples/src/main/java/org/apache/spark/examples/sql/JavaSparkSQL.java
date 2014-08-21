@@ -74,7 +74,7 @@ public class JavaSparkSQL {
 
     // Apply a schema to an RDD of Java Beans and register it as a table.
     JavaSchemaRDD schemaPeople = sqlCtx.applySchema(people, Person.class);
-    schemaPeople.registerTempTable("people");
+    schemaPeople.registerAsTable("people");
 
     // SQL can be run over RDDs that have been registered as tables.
     JavaSchemaRDD teenagers = sqlCtx.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19");
